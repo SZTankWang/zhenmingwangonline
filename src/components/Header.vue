@@ -50,8 +50,21 @@ function getTime():string{
     z-index:2;
     background-color: #2b2a2a;
     /* position:relative; */
+    animation-name:slide-up;
+    animation-duration: 800ms;
+    animation-timing-function: ease;
 }
 
+@keyframes slide-up {
+    from{
+        transform:translateY(1rem);
+        opacity:0;
+    }
+    to{
+        /* transform:translateY(0); */
+        opacity:1;
+    }
+}
 .time{
     position:absolute;
     right:0;

@@ -37,6 +37,18 @@
     position:relative;
     border-radius: 0.3rem;
     margin:1rem;
+    animation-name:fade-in;
+    animation-duration: 300ms;
+}
+
+@keyframes fade-in {
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
 }
 
 
