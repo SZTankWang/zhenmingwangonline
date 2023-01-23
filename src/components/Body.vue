@@ -17,7 +17,7 @@ height = "10"
 >
     <div class="col">
         <Image
-         url="src/assets/vue.png"
+         url="/vue.png"
          width="5"
          height="5"
 
@@ -37,7 +37,7 @@ height="10"
 >
 <div class="col">
     <Image
-    url="src/assets/react.png"
+    url="/react.png"
     width="5.9"
     height="5.1"
     />
