@@ -1,6 +1,21 @@
 <script setup lang="ts">
+import { ref,type Ref } from "vue";
 import Card from "./Card.vue"
 import Image from "./Image.vue"
+import Input from "./Input.vue"
+import FloatingText from "./FloatingText.vue";
+import {nanoid} from "nanoid";
+
+const spawnText:Ref<undefined|string> =ref<undefined|string>(undefined)
+const spawnTextId:Ref<undefined|string> = ref<undefined|string>(undefined)
+
+const handleSpawn = (v:string):void=>{
+    // console.log(v)
+    spawnText.value = v;
+
+    //this value controls the update animation of the spawn text
+    spawnTextId.value = nanoid(5)
+}
 
 
 </script>
@@ -15,7 +30,7 @@ title="A Todo App"
 width="18"
 height = "10"
 >
-    <div class="col">
+    <div class="col card-col">
         <Image
          url="/vue.png"
          width="5"
@@ -35,7 +50,7 @@ title="A Grid Editor"
 width="18"
 height="10"
 >
-<div class="col">
+<div class="col card-col">
     <Image
     url="/react.png"
     width="5.9"
@@ -46,6 +61,29 @@ height="10"
 </div>
 </div>
 </Card>
+</div>
+
+<div class="col">
+    <div class="title generic-title">
+        playground
+    </div>
+    <div class="sub-title generic-title">
+        防抖和节流 间隔时间: 2s
+    </div>
+    <div class="row" :style="{'margin-top':'1rem'}">
+        <Input
+        height="2"
+        width="6"
+        :font-size="3"
+        @spawntext="handleSpawn"
+        />
+    </div>
+    <div class="row" :style="{
+        'border':'1px solid #F3bc21',
+        'min-height':'2rem'
+        }">
+        <FloatingText v-bind:value="spawnText" v-bind:id="spawnTextId"/>
+    </div>
 </div>
 
 </div>
@@ -64,5 +102,10 @@ height="10"
 .title{
     font-size:1.3rem
 }
+
+.sub-title{
+    font-size:1.1rem;
+}
+
 
 </style>

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "moment": "^2.29.4",
+    "nanoid": "^4.0.0",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
