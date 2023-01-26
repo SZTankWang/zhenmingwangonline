@@ -70,7 +70,7 @@ height="10"
     height="5.1"
     />
 <div class="text">
-    Built with React + Redux
+    Built with React + Redux. 电脑端访问更佳
 </div>
 </div>
 </Card>
