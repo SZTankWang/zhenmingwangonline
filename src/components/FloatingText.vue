@@ -34,12 +34,13 @@ watch(idRef,(newId,prevId)=>{
 .float{
     /* font-size:2em; */
     color:#2b2a2a;
-    position:absolute;
+    position:relative;
     font-family: sans-serif;
     left:1rem;
     background:#F3bc21;
-    margin-top:0.2rem;
+    /* margin-top:0.2rem; */
     border-radius:3px;
+    max-width:85%;
 }
 
 .fadeIn{

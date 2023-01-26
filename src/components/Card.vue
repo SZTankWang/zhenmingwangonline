@@ -1,15 +1,22 @@
 <script setup lang="ts">
-    defineProps({
-        title:String,
-        width:String,
-        height:String
-    })
+interface cardProps {
+        title:string,
+        width:string,
+        height:string,
+        onclick?:(v:string)=>void
+
+}
+
+const props = withDefaults(defineProps<cardProps>(),{
+    onclick:()=>{}
+})
 </script>
 
 <template>
     <div 
     class="card"
     :style="{minWidth:`${width}rem`,minHeight:`${height}rem`}"
+    @click="props.onclick"
     >
         <div class="card-row title">
             {{ title }}
@@ -39,6 +46,7 @@
     margin:1rem;
     animation-name:fade-in;
     animation-duration: 300ms;
+    cursor:pointer;
 }
 
 @keyframes fade-in {

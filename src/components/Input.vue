@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, type ComputedRef } from '@vue/reactivity';
-import { nextTick, onMounted,ref } from 'vue';
+import { nextTick, onMounted,ref, watch } from 'vue';
 import type {Ref} from "vue"
 
 type Fn = (...args:any[])=>void;
@@ -8,7 +8,8 @@ type Fn = (...args:any[])=>void;
 
 const props = defineProps<{
     width:string,
-    height:string
+    height:string,
+    fn:string
 }>()
 
 const emit = defineEmits<{
@@ -16,6 +17,7 @@ const emit = defineEmits<{
 }>()
 
 const inputValue:Ref<string|undefined> = ref(undefined)
+const fnRef:Ref<(...args:any[])=>void> = ref(()=>null);
 
 const emitTextSpawn = ():void=>{
     if(inputValue.value !== undefined){
@@ -35,7 +37,9 @@ const getValue = async (e:Event):Promise<void>=>{
 //onmounted
 onMounted(():void=>{
     //event listener for keydown
-    document.getElementById("debounce-input")?.addEventListener("keydown",throttle(getValue,2000))
+    fnRef.value = debounce(getValue,2000)
+    document.getElementById("debounce-input")?.addEventListener("keydown",fnRef.value)
+
 })
 
 function debounce(fn:Fn,delay:number):Fn{
@@ -68,6 +72,21 @@ function throttle(fn:Fn,delay:number):Fn{
 
     }
 }
+
+//watch prop change
+watch(props,(newProp,oldProp)=>{
+    const input = document.getElementById("debounce-input")
+    //clear previous event listener
+    input!.removeEventListener("keydown",fnRef.value)    
+    //add new event listener using the new Fn
+    if(newProp.fn === "debounce"){
+        fnRef.value = debounce(getValue,2000)
+    }
+    else{
+        fnRef.value = throttle(getValue,2000)
+    }
+    input!.addEventListener("keydown",fnRef.value)   
+})
 
 </script>
 

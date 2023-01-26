@@ -32,7 +32,7 @@ function getTime():string{
     <span class="color-font time">{{ time }}</span>
     </div>
     <div class="row">
-        <span>A website built with Vue</span>
+        <span>A website built with Vue + Typescript</span>
     </div>
 </div>
 </template>

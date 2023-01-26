@@ -14,6 +14,7 @@
     overflow-x: scroll;
     position:relative;
     margin-top:0.3rem;
+    padding:0.2rem 0;
 }
 
 .row::-webkit-scrollbar{
@@ -39,7 +40,19 @@
     flex-direction: column;
     color:#ffffff;
     font-family: sans-serif;
+    animation-name: slide-in;
+    animation-duration: 500ms;
     /* align-items:center; */
+}
+
+@keyframes slide-in {
+    from{
+        opacity:0;
+        transform: translateY(20%);
+    }
+    to{
+        opacity:1
+    }
 }
 
 .card-col{
