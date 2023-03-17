@@ -2,11 +2,13 @@
 import { RouterLink, RouterView } from 'vue-router'
 import Header from "./components/Header.vue"
 import Body from "./components/Body.vue"
+import Footer from './components/Footer.vue'
 
 export default {
   components:{
     Header,
-    Body
+    Body,
+    Footer 
   }
 }
 
@@ -15,6 +17,7 @@ export default {
 <template>
  <Header/>
  <Body/>
+ <Footer/>
 </template>
 
 <style>
