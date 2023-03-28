@@ -27,8 +27,8 @@ const goToUrl = (v:string):void=>{
     window.location.href=v;
 }
 
-const gridUrl = "http://www.zhenmingwang.online/grid-editor"
-const toDoAppUrl = "http://www.zhenmingwang.online/todoApp"
+const gridUrl = "https://www.zhenmingwang.online/grid-editor"
+const toDoAppUrl = "https://www.zhenmingwang.online/todoApp"
 </script>
 
 
