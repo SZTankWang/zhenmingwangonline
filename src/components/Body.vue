@@ -45,7 +45,7 @@ height = "10"
 >
     <div class="col card-col">
         <Image
-         url="/ws.jpeg"
+         url="/vue.png"
          width="5"
          height="5"
 
