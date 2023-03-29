@@ -29,6 +29,7 @@ const goToUrl = (v:string):void=>{
 
 const gridUrl = "https://www.zhenmingwang.online/grid-editor"
 const toDoAppUrl = "https://www.zhenmingwang.online/todoApp"
+const chatUrl = "https://www.zhenmingwang.online/chat"
 </script>
 
 
@@ -36,6 +37,26 @@ const toDoAppUrl = "https://www.zhenmingwang.online/todoApp"
 <div class="body">
 
 <div class="row">
+<Card 
+title="Websocket Chat"
+width="18"
+height = "10"
+:onclick="()=>goToUrl(chatUrl)"
+>
+    <div class="col card-col">
+        <Image
+         url="/ws.jpeg"
+         width="5"
+         height="5"
+
+         />
+<div class="text">
+    A minimum function websocket chatroom.
+    
+</div>
+
+    </div>
+</Card>
 <Card 
 title="A Todo App"
 width="18"
