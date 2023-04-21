@@ -91,7 +91,7 @@ height="10"
     height="5.1"
     />
 <div class="text">
-    Built with React + Redux. 电脑端访问更佳
+    Built with React + Redux. 
 </div>
 </div>
 </Card>
@@ -105,13 +105,13 @@ height="10"
         <!-- 防抖和节流 间隔时间: 2s -->
         <ButtonGroup
         :elements="[
-            {text:'防抖',value:'debounce'},
-            {text:'节流',value:'throttle'}
+            {text:'debounce',value:'debounce'},
+            {text:'throttle',value:'throttle'}
         ]"
-        defaultActive="防抖"
+        defaultActive="debounce"
         v-on:switch-function="(v)=>handleSwitchFn(v)"
         />
-        间隔时间: 2s
+        time interval: 2s
     </div>
     <div class="row" :style="{'margin-top':'1rem'}">
         <Input
